@@ -15,6 +15,13 @@ class Project extends Model
         "start_date",
         "end_date",
         "rating",
-        "cost"
+        "cost",
+
+        "type_id"
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

@@ -27,6 +27,10 @@
                 <h3>Cost</h3>
                 <span>{{$project -> cost}} $</span>
             </div>
+            <div class="col">
+                <h3>Type</h3>
+                <span>{{$project -> type -> name}}</span>
+            </div>
         </div>
     </div>
 

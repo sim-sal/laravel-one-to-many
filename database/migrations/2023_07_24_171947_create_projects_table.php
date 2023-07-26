@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name', 64);
-            $table->text('description', 64)->nullable();
+            $table->text('description')->nullable();
             $table->date('start_date', 64);
             $table->date('end_date', 64);
             $table->integer('rating');

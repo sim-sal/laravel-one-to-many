@@ -2,7 +2,17 @@
 
 @section('content')
     <div class="container text-center pt-5">
-        <h1>Hello from CREATE</h1>
+        <h1>CREATE PROJECT</h1>
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <form method="POST" action="{{route('project.store')}}">
 
@@ -47,7 +57,7 @@
 
             <div>
                 <label for="cost"><strong>Cost</strong></label><br>
-                <input type="number" name="cost" id="cost" >
+                <input type="text" name="cost" id="cost" >
             </div>
 
             <div>
@@ -64,5 +74,6 @@
             <input type="submit" value="CREATE" class="my-3">
 
         </form>
+
     </div>
 @endsection

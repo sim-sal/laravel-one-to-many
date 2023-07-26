@@ -24,12 +24,12 @@ class LoggedController extends Controller
     }
     public function store(Request $request)
     {
-        // $data = $request->validate(
-        //     $this->getValidationRules(),
-        //     $this->getValidationMessages()
-        // );
+        $data = $request->validate(
+            $this->getValidationRules(),
+            $this->getValidationMessages()
+        );
 
-        $data = $request->all();
+        // $data = $request->all();
 
         $project = Project::create($data);
 
@@ -44,7 +44,8 @@ class LoggedController extends Controller
             "start_date" => "required",
             "end_date" => "required",
             "rating" => "required",
-            "cost" => "required|min_digits:5|max_digits:6"
+            "cost" => "required|min_digits:5|max_digits:6",
+            "type_id" => "required"
         ];
     }
     private function getValidationMessages()
@@ -60,7 +61,8 @@ class LoggedController extends Controller
             "rating.required" => "Inserisci il RATING!",
             "cost.required" => "Inserisci il COSTO!",
             "cost.min_digits" => "Accettiamo solo PROGETTI dal COSTO minimo di 10000$!",
-            "cost.max_digits" => "Il COSTO del progetto non può superare i 999999$!"
+            "cost.max_digits" => "Il COSTO del progetto non può superare i 999999$!",
+            "type_id.required" => "Inserisci il TYPE del PROGETTO!"
         ];
     }
 }

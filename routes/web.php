@@ -20,16 +20,28 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// INDEX
 Route::get('/', [GuestController::class, 'index'])
     ->name('project.index');
 
+// SHOW
 Route::get('/show{id}', [LoggedController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('project.show');
 
+// CREATE/STORE
+Route::get('/create', [LoggedController::class, 'create'])
+    ->middleware(['auth', 'verified'])
+    ->name('project.create');
+Route::post('/store', [LoggedController::class, 'store'])
+    ->middleware(['auth', 'verified'])
+    ->name('project.store');
+
+// DASHBOARD
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

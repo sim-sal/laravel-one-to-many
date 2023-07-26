@@ -11,7 +11,15 @@
             <span>Log in!</span>
         @endguest
 
+        @auth
         <h1>PROJECT LIST</h1>
+        <a class="btn btn-dark" href="{{route('project.create')}}">CREATE NEW PROJECT</a>
+        @endauth
+
+        @guest
+            <h1>PROJECT LIST</h1>
+        @endguest
+
 
         <ul class="list-unstyled">
             @foreach ($projects as $project)

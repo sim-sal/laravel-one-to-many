@@ -24,38 +24,23 @@ PROJECT LIST
             <h1>PROJECT LIST</h1>
         @endguest
 
-        <div >
 
-            <div >
+        <ul class="list-unstyled">
 
-                <h3>Project Name</h3>
+            @foreach ($projects as $project)
 
-                <ul class="list-unstyled">
+                <li class="pt-2 my-3">
+                    <a class="text-capitalize" href="{{route('project.show', $project -> id)}}">
+                        <strong>{{$project -> name}}</strong>
+                    </a>
 
-                    @foreach ($projects as $project)
+                    <div class="mt-1">
+                        <span>N° Technologies: <strong>{{count($project -> technologies)}}</strong></span>
+                    </div>
+                </li>
 
-                        <div class="project-container d-flex justify-content-center my-5">
-
-                            <div class="projects">
-
-                                <li class="pt-2">
-                                    <a class="text-capitalize" href="{{route('project.show', $project -> id)}}">
-                                        <strong>{{$project -> name}}</strong>
-                                    </a>
-                                </li>
-
-                            </div>
-
-                            <div>
-                                {{count($project -> technologies)}}
-                            </div>
-                        </div>
-
-                    @endforeach
-                </ul>
-            </div>
-
-        </div>
+            @endforeach
+        </ul>
 
     </div>
 

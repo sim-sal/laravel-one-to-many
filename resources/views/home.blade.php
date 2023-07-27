@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('pageName')
+PROJECT LIST
+@endsection
+
 @section('content')
 
     <div class="container text-center pt-5">

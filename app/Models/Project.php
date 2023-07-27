@@ -17,7 +17,8 @@ class Project extends Model
         "rating",
         "cost",
 
-        "type_id"
+        "type_id",
+        "technologie_id"
     ];
 
     public function type()

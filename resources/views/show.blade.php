@@ -37,15 +37,16 @@
             </div>
             <div class="col">
                 <h3>Technologies</h3>
-                @foreach ($project -> technologies as $technologie)
+                @if (count($project -> technologies) > 0)
 
-                    @if (count($project -> technologies) > 0)
-                    <span>{{$technologie -> name}}</span>
-                    @else
-                    <span>No Technologies!</span>
-                    @endif
+                    @foreach ($project -> technologies as $technologie)
+                        <span>{{$technologie -> name}}</span>
+                    @endforeach
 
-                @endforeach
+                @else
+                    <span>NO TECHNOLOGY!</span>
+                @endif
+
             </div>
         </div>
     </div>

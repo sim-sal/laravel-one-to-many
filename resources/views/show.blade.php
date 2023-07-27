@@ -35,6 +35,18 @@
                 <h3>Type</h3>
                 <span>{{$project -> type -> name}}</span>
             </div>
+            <div class="col">
+                <h3>Technologies</h3>
+                @foreach ($project -> technologies as $technologie)
+
+                    @if (count($project -> technologies) > 0)
+                    <span>{{$technologie -> name}}</span>
+                    @else
+                    <span>No Technologies!</span>
+                    @endif
+
+                @endforeach
+            </div>
         </div>
     </div>
 

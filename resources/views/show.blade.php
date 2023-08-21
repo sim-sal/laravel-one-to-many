@@ -39,9 +39,13 @@
                 <h3>Technologies</h3>
                 @if (count($project -> technologies) > 0)
 
-                    @foreach ($project -> technologies as $technologie)
-                        <span>{{$technologie -> name}}</span>
-                    @endforeach
+                    <ol>
+                        @foreach ($project -> technologies as $technologie)
+                        <li>
+                            <span>{{$technologie -> name}}</span>
+                        </li>
+                        @endforeach
+                    </ol>
 
                 @else
                     <span>NO TECHNOLOGY!</span>

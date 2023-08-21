@@ -103,6 +103,18 @@ CREATE PROJECT
                 @enderror
             </div>
 
+            {{-- <div>
+
+                @foreach ($technologies as $technologie)
+
+                @endforeach
+
+
+                @error('type_id')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div> --}}
+
             <input type="submit" value="CREATE" class="my-3">
 
         </form>
